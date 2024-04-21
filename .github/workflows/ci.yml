@@ -1,26 +1,26 @@
 name: CI
 
 on:
- push:
-  branches:
-   -main
+  push:
+    branches:
+      - main
 
 jobs:
- CI:
-  name: Continuous Integration
-  runs-on: ubuntu-latest
+  CI:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
 
-  steps:
-   - name: Checkout Repository
-     uses: actions/checkout@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-   - name: Setup Node
-     uses: actions/setup-node@v3
-     with:
-      node-version: 18.x
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
 
-  - name: Install Dependencies
-    run: npm install
+      - name: Install dependencies
+        run: npm install
 
-  - name: Run Tests
-    run: npm test
+      - name: Run Tests
+        run: npm test
